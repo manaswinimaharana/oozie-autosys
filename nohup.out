@@ -1,0 +1,30 @@
+oozie job -D oozie.wf.application.path=/user/cloudera/examples/apps/hive -D jobTracker=quickstart.cloudera:8032 -D nameNode=hdfs://quickstart.cloudera:8020 -config /home/cloudera/oozie-autosys/examples/apps/hive/job.properties -run
+Running the Oozie job
+job: 0000036-151204190242186-oozie-oozi-W
+The Oozie workflow id is: 0000036-151204190242186-oozie-oozi-W
+*************************************************
+ Oozie job status for 0000036-151204190242186-oozie-oozi-W
+*************************************************
+The workflow status is : RUNNING
+The workflow status is : RUNNING
+The workflow status is : RUNNING
+The workflow status is : RUNNING
+The workflow status is : RUNNING
+The workflow status is : RUNNING
+The workflow status is : RUNNING
+The workflow status is : SUCCEEDED
+oozie job -D oozie.wf.application.path=/user/cloudera/examples/apps/hive -D jobTracker=quickstart.cloudera:8032 -D nameNode=hdfs://quickstart.cloudera:8020 -config /home/cloudera/oozie-autosys/examples/apps/hive/job.properties -run
+Running the Oozie job
+job: 0000037-151204190242186-oozie-oozi-W
+The Oozie workflow id is: 0000037-151204190242186-oozie-oozi-W
+*************************************************
+ Oozie job status for 0000037-151204190242186-oozie-oozi-W
+*************************************************
+The workflow status is : RUNNING
+The workflow status is : RUNNING
+The workflow status is : RUNNING
+The workflow status is : RUNNING
+The workflow status is : RUNNING
+The workflow status is : RUNNING
+The workflow status is : RUNNING
+The workflow status is : SUCCEEDED
