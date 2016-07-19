@@ -1,1 +1,3 @@
-bash run_oozie_workflow.sh /user/cloudera/examples/apps/hive /home/cloudera/oozie-autosys/examples/apps/hive/job.properties
+#!/bin/bash
+parentdir="$(dirname $(dirname "$(pwd)"))"
+bash run_oozie_workflow.sh /tmp/oozie-autosys/workflow.xml ${parentdir}/examples/scripts/job.properties

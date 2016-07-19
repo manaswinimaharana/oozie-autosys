@@ -1,4 +1,3 @@
-oozie-autosys
 Autosys (CA workload automation) is a batch job scheduling and monitoring tool, mostly used to automate unix based production workloads. Three of the most enticing features of Autosys are “Maturity”, “Ease of use” and “GUI based”, which makes it a preferred enterprise scheduler. Apache Oozie is a web-server based and most recommended workflow scheduler for Hadoop jobs. Each of system has its own idiosyncrasies , but a seamless integration benefits all.
 
 The assumption here is Autosys is already installed on the CDH cluster. It is recommended to set it up on one of the edge node/gateway(s).
