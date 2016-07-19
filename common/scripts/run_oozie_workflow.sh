@@ -40,7 +40,7 @@ $(oozie job -kill ${oz_job_id})
 exit 1
 }
 
-#Runs a given oozie workflow
+#Runs a given oozie workflow and capture the oozie id
 runOozieJob(){
 echo "Running the Oozie job"
 run_result=`eval ${job}`
@@ -54,10 +54,34 @@ else
 fi
 }
 
-#Poll oozie for status - method 1  
-#use this method when an interval of less than 60 seconds is needed
 
 getOozieJobStatus(){
+   oz_job_id=${1}
+    if [ '${oz_job_id}' == '' ] ; then
+          echo "The oozie job_id cannot be empty"
+          exit 1
+   fi
+   echo "*************************************************"
+   echo " Oozie job status for ${oz_job_id}"
+   echo "*************************************************"
+
+  job_status=$(oozie job -poll ${oz_job_id} -interval 1 -timeout 180 -verbose)  ;
+
+ echo "The workflow status is : ${job_status}"
+
+if [ "${job_status}" == "SUCCEEDED" ]; then
+        echo "The workflow status is : ${job_status}"
+        return 0
+fi
+killOozieJob
+return 1
+}
+
+
+  
+#use this method when an interval of less than 60 seconds is needed
+
+getOozieJobStatusSecs(){
    oz_job_id=${1}
     if [ '${oz_job_id}' == '' ] ; then
           echo "The oozie job_id cannot be empty"
@@ -94,10 +118,8 @@ fi
 }
 
 
-
 job="oozie job -D oozie.wf.application.path=${1} -D jobTracker=${jobTracker} -D nameNode=${nameNode} -config ${2} -run" 
 
 echo ${job}
 runOozieJob
 getOozieJobStatus ${oz_job_id}
-
